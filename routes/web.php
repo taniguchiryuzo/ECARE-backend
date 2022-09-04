@@ -15,9 +15,9 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 // お問い合わせフォーム
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');

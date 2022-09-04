@@ -14,17 +14,12 @@ class RecipiController extends Controller
      */
     public function index()
     {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $recipis = Recipi::all();
+        return response()->json([
+            'message' => 'ok',
+            'data'    => $recipis,
+        ], 200, [], JSON_UNESCAPED_UNICODE);
     }
 
     /**
@@ -41,21 +36,10 @@ class RecipiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\recipi  $recipi
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Recipi $recipi)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\recipi  $recipi
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Recipi $recipi)
+    public function show($id)
     {
         //
     }
@@ -64,10 +48,10 @@ class RecipiController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\recipi  $recipi
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Recipi $recipi)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +59,10 @@ class RecipiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\recipi  $recipi
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Recipi $recipi)
+    public function destroy($id)
     {
         //
     }
